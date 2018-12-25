@@ -13,11 +13,12 @@ var familie = [
   function init() {
     var year = getYear();
     var whoIsUp = getWhoIsUp(year);
+    getNext();
     renderView(whoIsUp);
   }
   
   function getYear() {
-    var year = new Date().getYear();
+    var year = new Date().getFullYear();
     return year;
   }
   
@@ -30,3 +31,16 @@ var familie = [
     document.getElementById("whoisup").innerHTML = whoIsUp;
   }
   
+  function getNext() {
+    var list = document.getElementById("next");
+    var year = getYear();
+
+    for (var i = 0; i < 3; i++) {
+      
+      var item = document.createElement("li");
+      nextYear = year + i + 1;
+      var textnode = document.createTextNode(nextYear + ': ' + getWhoIsUp(year + i + 1));  
+      item.appendChild(textnode);
+      list.appendChild(item);
+    }
+  }
