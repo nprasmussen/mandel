@@ -38,8 +38,8 @@ var familie = [
     for (var i = 0; i < 3; i++) {
       
       var item = document.createElement("li");
-      nextYear = year + i + 1;
-      var textnode = document.createTextNode(nextYear + ': ' + getWhoIsUp(year + i + 1));  
+      var nextYear = year + i + 1;
+      var textnode = document.createTextNode(nextYear + ': ' + getWhoIsUp(nextYear));  
       item.appendChild(textnode);
       list.appendChild(item);
     }
