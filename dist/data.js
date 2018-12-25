@@ -5,8 +5,11 @@ var familie = [
     'Jens'
   ]
   
-  init();
   
+  window.onload = function() {
+    init();
+  }
+
   function init() {
     var year = getYear();
     var whoIsUp = getWhoIsUp(year);
